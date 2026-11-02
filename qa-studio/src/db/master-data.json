@@ -1,0 +1,784 @@
+{
+ "customers": [
+  "IDFCFIRST",
+  "IDFCFIRST RESERVE",
+  "AMEX",
+  "HDFC-EMI STORE",
+  "ETHIOPIAN AIRLINES",
+  "BOBCARD"
+ ],
+ "products": {
+  "Tripstacc": [
+   "Flights",
+   "Hotels"
+  ],
+  "Shopstacc": [
+   "EGV",
+   "Merchandise"
+  ]
+ },
+ "forms": [
+  {
+   "key": "call",
+   "name": "Call Evaluation",
+   "channel": "Call",
+   "sections": [
+    {
+     "id": "cs1",
+     "name": "Opening",
+     "params": [
+      {
+       "id": "c1",
+       "name": "Greetings / Self and Company introduction",
+       "weight": 2,
+       "desc": "Appropriate greeting: Good morning, afternoon, evening.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Greets with the time of day, gives own name and the brand (Tripstacc / Shopstacc) in the opening.",
+       "guideN": "Greeting, own name or brand is missing.",
+       "guideNA": "Call is a warm transfer that starts mid-conversation."
+      },
+      {
+       "id": "c2",
+       "name": "Promptness in answering call in 5 secs",
+       "weight": 2,
+       "desc": "Call opening within 5 seconds.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Agent speaks within 5 seconds of the call connecting.",
+       "guideN": "Silence of more than 5 seconds after connect before the agent opens.",
+       "guideNA": "The recording starts after the opening, so it cannot be heard."
+      }
+     ]
+    },
+    {
+     "id": "cs2",
+     "name": "Listening Skills",
+     "params": [
+      {
+       "id": "c3",
+       "name": "Acknowledge / Verbal nods",
+       "weight": 3,
+       "desc": "Acknowledge (verbal nodding), e.g. Yes, No, Alright, Sure.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Regular verbal nods (sure, alright, I understand) while the customer explains.",
+       "guideN": "Long stretches with no acknowledgement, or the customer asks \"are you there?\".",
+       "guideNA": "Customer barely speaks (very short call)."
+      },
+      {
+       "id": "c4",
+       "name": "Active listening / Repetition",
+       "weight": 3,
+       "desc": "Repetition of verbal nods or specific words, asking the same questions multiple times.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Picks up details the customer already gave; no repeated questions.",
+       "guideN": "Asks the customer to repeat information already shared, or misses details.",
+       "guideNA": "Rarely used."
+      },
+      {
+       "id": "c5",
+       "name": "Paraphrasing",
+       "weight": 2,
+       "desc": "Short brief of the customer's query if the customer comes with multiple queries.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Summarises a multi-part query before resolving it.",
+       "guideN": "Customer raised more than one query and the agent did not summarise.",
+       "guideNA": "Single, simple query."
+      },
+      {
+       "id": "c6",
+       "name": "Dead Air <= 5 seconds",
+       "weight": 2,
+       "desc": "No conversation between customer and CSA for 5 seconds or more.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "No unexplained silence of 5 seconds or more; fillers or hold used while checking.",
+       "guideN": "Any silence of 5 seconds or more with no filler or hold script.",
+       "guideNA": "No system check was needed during the call."
+      }
+     ]
+    },
+    {
+     "id": "cs3",
+     "name": "Communication Skills",
+     "params": [
+      {
+       "id": "c7",
+       "name": "Language and Grammar",
+       "weight": 3,
+       "desc": "Proper sentence framing and use of grammar.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Complete, correctly framed sentences.",
+       "guideN": "Repeated grammar or framing errors that sound unprofessional or change meaning.",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "c8",
+       "name": "Adjust to customer language",
+       "weight": 2,
+       "desc": "Switching language according to the customer.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Switches to the language the customer prefers when asked or signalled.",
+       "guideN": "Continues in a language the customer is struggling with.",
+       "guideNA": "Customer is comfortable in the opening language."
+      },
+      {
+       "id": "c9",
+       "name": "Professional",
+       "weight": 3,
+       "desc": "CSA needs to be professional on the call.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Courteous, no slang or personal talk, quiet background.",
+       "guideN": "Casual remarks, slang, arguing, or background noise heard.",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "c10",
+       "name": "Confidence / Fumbling and Fillers",
+       "weight": 3,
+       "desc": "Sound confident, avoid fillers between sentences and avoid fumbling.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Steady delivery with few fillers; explains process without fumbling.",
+       "guideN": "Frequent fillers (\"umm\", \"actually\") or fumbling over the process.",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "c11",
+       "name": "Interruption / Overlapping",
+       "weight": 2,
+       "desc": "Avoid interrupting or overlapping when the customer is speaking.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Lets the customer finish before responding.",
+       "guideN": "Talks over the customer more than once.",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "c12",
+       "name": "Tone / Pace, Energetic & Enthusiasm",
+       "weight": 2,
+       "desc": "Rude tone, dull tone, call pace too fast.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Warm, energetic tone at a moderate pace.",
+       "guideN": "Rude, flat or dull tone, or a rushed pace.",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "c13",
+       "name": "Pronunciation",
+       "weight": 2,
+       "desc": "Pronunciation of words.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Names, places and brand pronounced clearly.",
+       "guideN": "Mispronunciations that confuse the customer.",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "c14",
+       "name": "Assertive",
+       "weight": 2,
+       "desc": "Needs to be positive on the call.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Positive, clear statements (\"I will arrange this for you\").",
+       "guideN": "Uncertain or negative phrasing (\"I can't do anything\").",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "c15",
+       "name": "Hold Guidelines followed",
+       "weight": 2,
+       "desc": "Was hold required; hold guidelines followed (PTR).",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "PTR followed: asks permission, gives the time needed, thanks the customer on return.",
+       "guideN": "Puts the customer on hold without permission or without thanking on return.",
+       "guideNA": "No hold was used."
+      },
+      {
+       "id": "c16",
+       "name": "Hold Threshold <= 60 Seconds",
+       "weight": 2,
+       "desc": "Hold threshold.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Each hold is 60 seconds or less, or refreshed every 60 seconds.",
+       "guideN": "Hold over 60 seconds without a refresh.",
+       "guideNA": "No hold was used."
+      }
+     ]
+    },
+    {
+     "id": "cs4",
+     "name": "Rapport Building (Inbound / Complaints)",
+     "params": [
+      {
+       "id": "c17",
+       "name": "Personalization",
+       "weight": 2,
+       "desc": "Must take the customer's name 3 times throughout the call.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Uses the customer's name at least 3 times.",
+       "guideN": "Name used fewer than 3 times.",
+       "guideNA": "Customer did not share or refused to give a name."
+      },
+      {
+       "id": "c18",
+       "name": "Apology / Empathy where relevant",
+       "weight": 2,
+       "desc": "Apology and empathy if the customer is facing a problem, where relevant.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Apologises or empathises where the customer faced a problem.",
+       "guideN": "Customer faced a problem and no empathy was shown.",
+       "guideNA": "Pure information query with no problem."
+      }
+     ]
+    },
+    {
+     "id": "cs5",
+     "name": "Educating the customer (Inbound / Complaints)",
+     "params": [
+      {
+       "id": "c19",
+       "name": "Relevant Questioning (Probing)",
+       "weight": 3,
+       "desc": "Proper use of open-ended, close-ended or leading questions.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Asks the right questions (booking ID, dates, PNR) before resolving.",
+       "guideN": "Misses key questions or probes unnecessarily.",
+       "guideNA": "Query was fully clear from the start."
+      },
+      {
+       "id": "c20",
+       "name": "Telling the customer what to do next",
+       "weight": 2,
+       "desc": "Educating the customer on what to do next.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Tells the customer the next steps and what to expect.",
+       "guideN": "Customer is left unclear about what happens next.",
+       "guideNA": "Query fully closed; nothing further for the customer to do."
+      },
+      {
+       "id": "c21",
+       "name": "Offers alternatives / Gives helpful information beyond specific query",
+       "weight": 3,
+       "desc": "Giving various options to the customer on the query, as per the available procedure.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Offers available alternatives (points + pay, other flights, other vouchers).",
+       "guideN": "Alternatives existed but were not offered.",
+       "guideNA": "No alternative was applicable."
+      }
+     ]
+    },
+    {
+     "id": "cs6",
+     "name": "NPS / FTR (Inbound / Complaints)",
+     "params": [
+      {
+       "id": "c22",
+       "name": "FTR",
+       "weight": 4,
+       "desc": "First call resolution.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Query resolved on this call.",
+       "guideN": "Could have been resolved on the call but was ticketed or called back.",
+       "guideNA": "Resolution depends on a third party (airline, supplier, bank)."
+      }
+     ]
+    },
+    {
+     "id": "cs7",
+     "name": "Concluding the call",
+     "params": [
+      {
+       "id": "c23",
+       "name": "Not rushed in closing the call / Pleasant / Positive words",
+       "weight": 2,
+       "desc": "Not rushed in closing the call, positive words.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Summarises, offers further help and closes pleasantly.",
+       "guideN": "Abrupt or rushed closing.",
+       "guideNA": "Customer disconnected before closing."
+      }
+     ]
+    },
+    {
+     "id": "cs8",
+     "name": "Fatal Parameters (Inbound / Complaints)",
+     "params": [
+      {
+       "id": "c24",
+       "name": "Inaccurate Information",
+       "weight": 10,
+       "desc": "Irrelevant information, i.e. not pertaining to the customer query.",
+       "fatal": true,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "All information shared is correct.",
+       "guideN": "Any incorrect information on booking, refund, policy or points. Fatal.",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "c25",
+       "name": "Incomplete Information",
+       "weight": 10,
+       "desc": "Incomplete information in any process that has led to a repeat call or inconvenience to the customer.",
+       "fatal": true,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "All information needed for the query is shared.",
+       "guideN": "Missing information likely to cause a repeat call or inconvenience. Fatal.",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "c26",
+       "name": "Outcall not done wherever applicable",
+       "weight": 10,
+       "desc": "If the call disconnects while the CSA is giving information, the CSA needs to call back.",
+       "fatal": true,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Agent called back after a disconnection during the call.",
+       "guideN": "Call disconnected and no callback was made. Fatal.",
+       "guideNA": "No disconnection happened."
+      },
+      {
+       "id": "c27",
+       "name": "Correct TAT shared (if applicable)",
+       "weight": 10,
+       "desc": "Incorrect TAT.",
+       "fatal": true,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Correct TAT shared for refund, confirmation or resolution.",
+       "guideN": "Wrong TAT, or no TAT where one was required. Fatal.",
+       "guideNA": "No TAT applies to the query."
+      },
+      {
+       "id": "c28",
+       "name": "CRM - Contact Updation / No Tagging on CRM",
+       "weight": 5,
+       "desc": "Must update wherever applicable. Incorrect tagging or no tagging.",
+       "fatal": true,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Vtiger case created or updated with correct tagging and contact details.",
+       "guideN": "No case, wrong tagging or missing contact update. Fatal.",
+       "guideNA": "Not used."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "email",
+   "name": "Email Evaluation",
+   "channel": "Email",
+   "sections": [
+    {
+     "id": "es1",
+     "name": "Opening",
+     "params": [
+      {
+       "id": "e1",
+       "name": "Address / Email address captured rightly",
+       "weight": 2,
+       "desc": "Correct email address of the customer to be captured, and customer phone number. CC relevant people if the customer has marked a copy.",
+       "fatal": true,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Correct customer email in To, required people kept in CC, phone number captured.",
+       "guideN": "Wrong recipient or CC dropped. Fatal.",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "e2",
+       "name": "Salutation",
+       "weight": 2,
+       "desc": "All emails start with \"Dear Mr./Ms. XXXXX (last name)\". Second preference to first name if last name is not available. Where no name is available, address as \"Dear Traveller\" instead of \"Dear Customer\". (BOD given if the name does not indicate male/female or first/last name.)",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "\"Dear Mr./Ms. <Last name>\", first name if no last name, or \"Dear Traveller\" when no name.",
+       "guideN": "\"Dear Customer\", wrong name or wrong title.",
+       "guideNA": "Not used."
+      }
+     ]
+    },
+    {
+     "id": "es2",
+     "name": "Comprehension Skills",
+     "params": [
+      {
+       "id": "e3",
+       "name": "Opening statement",
+       "weight": 2,
+       "desc": "Inquiry/Request 1st email: \"We acknowledge your e-mail dated <date> for your phone number/order ID.\"\nRepeat email: \"We have gone through your e-mail dated <date>…\"\nComplaint 1st email: \"We acknowledge your e-mail dated <date> for your complaint number…\"\nComplaint 2nd email: \"We have gone through your email dated <date>… regret the inconvenience caused.\"",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Opening line follows the template and references the email date and order / phone ID.",
+       "guideN": "Opening statement missing or not as per template.",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "e4",
+       "name": "Delay Statement",
+       "weight": 2,
+       "desc": "Use if the mail is answered beyond the committed SLA: \"We regret the delay in response\". Can be skipped if an empathy statement is already in the draft.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "\"We regret the delay in response\" used when the reply is beyond SLA.",
+       "guideN": "Reply beyond SLA with no delay statement.",
+       "guideNA": "Reply within SLA, or an empathy statement already covers it."
+      },
+      {
+       "id": "e5",
+       "name": "Apology statement given",
+       "weight": 2,
+       "desc": "Agent did not give an empathy statement (if applicable).",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Empathy statement given where the customer faced inconvenience.",
+       "guideN": "Customer faced inconvenience and no empathy was given.",
+       "guideNA": "No inconvenience to acknowledge."
+      },
+      {
+       "id": "e6",
+       "name": "Appropriate reference of telephonic communication is provided (wherever applicable)",
+       "weight": 4,
+       "desc": "All telephonic conversations to be drafted in the email response: \"As per the telephonic conversation had with you on your number XXXXXXX today…\". The core query discussed and agreed must be addressed in the email.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Telephonic conversation summarised in the email, with the agreed resolution.",
+       "guideN": "A call happened but is not referenced in the email.",
+       "guideNA": "No call with the customer."
+      }
+     ]
+    },
+    {
+     "id": "es3",
+     "name": "Communication",
+     "params": [
+      {
+       "id": "e7",
+       "name": "Drafting",
+       "weight": 20,
+       "desc": "1) Appropriate choice of words in line with the customer's query\n2) Template / attachment / information suits the query and profile\n3) No jargon\n4) Correct construction of statements\n5) Incorrect / incomplete drafting, irrelevant or unnecessary probing\n6) Probing email: 3 outcall attempts 30 mins apart, mentioned in the draft\n7) Correct template response followed\n8) Gist and conclusion of telephonic conversation mentioned",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Meets all 8 drafting checks in the guideline.",
+       "guideN": "Fails any drafting check (template, jargon, construction, probing, gist of call).",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "e8",
+       "name": "Presentation of the draft or attachment",
+       "weight": 4,
+       "desc": "Justified alignment, table borders, margins and fonts, 1 line between paragraphs, spacing between words, sequence in line with the query, SLA informed, no over-empathy.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Formatting checklist met: alignment, spacing, borders, sequence, SLA stated.",
+       "guideN": "Any formatting or presentation issue, or over-empathy.",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "e9",
+       "name": "Grammar",
+       "weight": 4,
+       "desc": "Self-explanatory; inappropriate terms or words used.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "No grammar errors.",
+       "guideN": "Grammar errors or inappropriate words.",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "e10",
+       "name": "Punctuation & usage of correct case",
+       "weight": 4,
+       "desc": "Self-explanatory.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Correct punctuation and case.",
+       "guideN": "Punctuation or case errors.",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "e11",
+       "name": "Spelling mistakes",
+       "weight": 4,
+       "desc": "Self-explanatory.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "No spelling mistakes.",
+       "guideN": "Any spelling mistake.",
+       "guideNA": "Not used."
+      },
+      {
+       "id": "e12",
+       "name": "Closing statement",
+       "weight": 2,
+       "desc": "As per the template or appropriate to the communication of the customer.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N",
+        "NA"
+       ],
+       "guideY": "Closing as per template or suited to the conversation.",
+       "guideN": "Closing missing or inappropriate.",
+       "guideNA": "Not used."
+      }
+     ]
+    },
+    {
+     "id": "es4",
+     "name": "Fatal",
+     "params": [
+      {
+       "id": "e13",
+       "name": "Agent understood & answered the customer's query accurately and ensured resolution",
+       "weight": 10,
+       "desc": "All queries addressed; relevant files attached; accurate and complete information; resolution as per case closure; correct and timely escalation; appropriate tools and helpdesks checked.",
+       "fatal": true,
+       "options": [
+        "Y",
+        "N"
+       ],
+       "guideY": "Every query answered accurately, files attached, escalated correctly.",
+       "guideN": "Any query unanswered, answered wrongly, or escalated late. Fatal.",
+       "guideNA": "Not allowed."
+      },
+      {
+       "id": "e14",
+       "name": "Resolution provided based on reply from internal team with TAT",
+       "weight": 10,
+       "desc": "All relevant information in line with process/template to avoid a repeat email. Wrong TAT, interim reply sent as reply instead of new memo, or no outcall causing probing/repeat emails is marked here.",
+       "fatal": true,
+       "options": [
+        "Y",
+        "N"
+       ],
+       "guideY": "Resolution based on the internal team reply, with the correct TAT, sent as a new memo.",
+       "guideN": "Wrong TAT, interim sent as reply, or no outcall causing repeat emails. Fatal.",
+       "guideNA": "Not allowed."
+      },
+      {
+       "id": "e15",
+       "name": "Disposition & creation of contact in Vtiger",
+       "weight": 8,
+       "desc": "1. Correct disposition logged.\n2. Interaction logged for inquiry / interim reply and contact created in Vtiger.",
+       "fatal": true,
+       "options": [
+        "Y",
+        "N"
+       ],
+       "guideY": "Correct disposition logged and contact created in Vtiger.",
+       "guideN": "Wrong or missing disposition, or contact not created. Fatal.",
+       "guideNA": "Not allowed."
+      },
+      {
+       "id": "e16",
+       "name": "Interaction notes (Fatal for TT / Action Items, Non Fatal for Inquiries)",
+       "weight": 5,
+       "desc": "All required details captured as per process; correct and sufficient notes with concern and resolution. Do not copy-paste the email.",
+       "fatal": true,
+       "options": [
+        "Y",
+        "N"
+       ],
+       "guideY": "Interaction notes capture concern and resolution in the agent's own words.",
+       "guideN": "Notes missing, insufficient or copy-pasted email. Fatal.",
+       "guideNA": "Not allowed."
+      }
+     ]
+    },
+    {
+     "id": "es5",
+     "name": "SLA Adherence",
+     "params": [
+      {
+       "id": "e17",
+       "name": "SLA Adherence as per process",
+       "weight": 15,
+       "desc": "Timely response to the mail: less than 6 hrs = 15 marks; 6 to 24 hrs = 0; beyond 24 hrs = 0.",
+       "fatal": false,
+       "options": [
+        "Y",
+        "N"
+       ],
+       "guideY": "Reply sent in less than 6 hours.",
+       "guideN": "Reply took 6 hours or more (0 marks).",
+       "guideNA": "Not allowed."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
